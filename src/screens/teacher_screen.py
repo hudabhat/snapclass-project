@@ -32,7 +32,7 @@ def teacher_screen():
 
 def teacher_dashboard():
     teacher_data = st.session_state.teacher_data
-    c1, c2 = st.columns(2,vertical_alignment='center',gap='xxlarge')
+    c1, c2 = st.columns(2,vertical_alignment='center',gap='large')
     with c1:
         header_dashboard()
     with c2:
@@ -266,7 +266,7 @@ def login_teacher(username,password):
     return False
 
 def teacher_screen_login():
-    c1,c2 = st.columns(2,vertical_alignment="center",gap="xxlarge")
+    c1,c2 = st.columns(2,vertical_alignment="center",gap="large")
     with c1:
         header_dashboard()
     with c2:
@@ -313,7 +313,7 @@ def register_teacher(teacher_username,teacher_name,teacher_pass,teacher_pass_con
 
 
 def teacher_screen_register():
-    c1,c2 = st.columns(2,vertical_alignment="center",gap="xxlarge")
+    c1,c2 = st.columns(2,vertical_alignment="center",gap="large")
     with c1:
         header_dashboard()
     with c2:
