@@ -14,7 +14,7 @@ import time
 def student_dashboard():
     student_data = st.session_state.student_data
     student_id = student_data['student_id']
-    c1, c2 = st.columns(2,vertical_alignment='center',gap='large')
+    c1, c2 = st.columns(2,vertical_alignment='center',gap='xxlarge')
     with c1:
         header_dashboard()
     with c2:
@@ -89,7 +89,7 @@ def student_screen():
         student_dashboard()
         return
 
-    c1,c2 = st.columns(2,vertical_alignment="center",gap="large")
+    c1,c2 = st.columns(2,vertical_alignment="center",gap="xxlarge")
     with c1:
         header_dashboard()
     with c2:
