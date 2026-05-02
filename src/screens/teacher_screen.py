@@ -270,7 +270,7 @@ def teacher_screen_login():
     with c1:
         header_dashboard()
     with c2:
-        if st.button("Go back to Home",type="secondary",key='loginbackbtn'):
+        if st.button("Go back to Home",type="secondary",key='loginbackbtn',width='stretch',shortcut="control+backspace"):
             st.session_state['login_type']=None
             st.rerun()
     st.header("Login using password",text_alignment="center")
@@ -282,7 +282,7 @@ def teacher_screen_login():
     st.divider()
     btnc1,btnc2 = st.columns(2)
     with btnc1:
-       if st.button('Login',icon=':material/passkey:',width="stretch"):
+       if st.button('Login',icon=':material/passkey:',width="stretch", shortcut="control+enter"):
            
            if login_teacher(teacher_username,teacher_password):
                st.toast("Wecome back")
