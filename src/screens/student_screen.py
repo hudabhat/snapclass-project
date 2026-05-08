@@ -1,7 +1,6 @@
 import streamlit as st
 from src.ui.base_layout import style_background_dashboard,style_base_layout
 from src.components.header import header_dashboard
-from src.components.footer import footer_dashboard
 from PIL import Image
 from src.pipelines.face_pipeline import predict_attendance,get_face_embeddings,train_classifier
 from src.pipelines.voice_pipeline import get_voice_embedding
@@ -77,7 +76,6 @@ def student_dashboard():
             )
 
 
-    footer_dashboard()
 
 
 def student_screen():
@@ -173,6 +171,3 @@ def student_screen():
 
                 else:
                     st.warning('Please enter your name')
-
-
-    footer_dashboard()

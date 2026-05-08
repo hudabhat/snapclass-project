@@ -1,7 +1,6 @@
 import streamlit as st
 from src.ui.base_layout import style_background_dashboard,style_base_layout
 from src.components.header import header_dashboard
-from src.components.footer import footer_dashboard
 from src.database.db import check_teacher_exists, create_teacher,teacher_login,get_teacher_subjects
 from src.components.dialog_create_subject import create_subject_dialog
 from src.components.subject_card import subject_card
@@ -240,8 +239,6 @@ def teacher_tab_attendance_records():
                   )
     st.dataframe(display_df,width='stretch',hide_index=True)
 
-    footer_dashboard()
-
 
 
 
@@ -296,7 +293,6 @@ def teacher_screen_login():
     with btnc2:
         if st.button('Register Instead',type="primary",icon=':material/passkey:',width="stretch"):
             st.session_state.teacher_login_type='register'
-    footer_dashboard()
 
 def register_teacher(teacher_username,teacher_name,teacher_pass,teacher_pass_confirm):
     if not teacher_username or not teacher_name or not teacher_pass:
@@ -346,4 +342,3 @@ def teacher_screen_register():
     with btnc2:
        if st.button('Login Instead',type="primary",icon=':material/passkey:',width="stretch"):
            st.session_state.teacher_login_type = 'login'
-    footer_dashboard()
