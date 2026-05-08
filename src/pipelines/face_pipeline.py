@@ -82,10 +82,20 @@ def predict_attendance(class_image_np):
         else:
             predicted_id = int(all_students[0])
 
-        student_embedding = X_train[y_train.index(predicted_id)]
+        #student_embedding = X_train[y_train.index(predicted_id)]
+        student_embedding = [
+            X_train[i]
+            for i in range(len(y_train))
+            if y_train[i] == predicted_id
+        ]
 
-        best_match_score = np.linalg.norm(student_embedding - encoding)
-        resemblance_threshold = 0.6
+        best_match_score = min(
+            np.linalg.norm(emb - encoding)
+            for emb in student_embedding
+        )
+
+        #best_match_score = np.linalg.norm(student_embedding - encoding)
+        resemblance_threshold = 0.45
 
         if best_match_score <= resemblance_threshold:
             detected_student[predicted_id] = True
